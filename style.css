@@ -46,7 +46,7 @@ body {
   padding: 40px;
   display: inline-block;
   width: 400px;
-  height: 220px;
+  min-height: 220px;
   margin: 30px 50px;
   border-radius: 10px;
   color: white;
