@@ -8,45 +8,11 @@ body {
   font-family: 'Arial';
 }
 
-.name::before {
-  right: -80px;
-  top: -10px;
-}
-
-.name::after {
-  bottom: -100px;
-  right: -5px;
-}
-
-.container:hover .name::before,
-.container:focus .name::before {
-  transform: translate(-250px, 140px);
-  transition: transform 3s linear;
-}
-
-.container:hover .name::after,
-.container:focus .name::after {
-  transform: translate(-100px, -200px);
-  transition: transform 3s linear;
-}
-
-.name::before, 
-.name::after {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: rgba(255, 255, 255, 0.322);
-  border-radius: 50%;
-}
-
-.container {
+.card {
   position: relative;
   padding: 40px;
   display: inline-block;
   width: 400px;
-  height: 220px;
   margin: 30px 50px;
   border-radius: 10px;
   color: white;
@@ -58,7 +24,7 @@ body {
   height: 25px;
   position: absolute;
   right: 40px;
-  top: 50px;
+  top: 40px;
 }
 
 .name {
@@ -69,39 +35,52 @@ body {
 .numbers {
   font-weight: bold;
   font-size: 30px;
+  margin-bottom: 50px;
 }
 
-.percentages {
+.main .card:nth-child(3n) {
+  background: rgb(158,242,219);
+background: linear-gradient(90deg, rgba(158,242,219,1) 0%, rgba(80,222,195,1) 36%, rgba(53,193,157,1) 100%);
+}
+
+.main .card:nth-child(3n+1) {
+  background: rgb(255,183,136);
+background: linear-gradient(90deg, rgba(255,183,136,1) 0%, rgba(254,145,145,1) 36%, rgba(245,87,87,1) 100%);
+}
+
+.main .card:nth-child(3n+2) {
+  background: rgb(121,202,221);
+background: linear-gradient(90deg, rgba(121,202,221,1) 0%, rgba(71,174,215,1) 36%, rgba(29,116,203,1) 100%);
+}
+
+.card::before {
+  right: -80px;
+  top: -10px;
+}
+
+.card::after {
+  bottom: -100px;
+  right: -5px;
+}
+
+.card:hover::before,
+.card:focus::before {
+  transform: translate(-250px, 140px);
+}
+
+.card:hover::after,
+.card:focus::after {
+  transform: translate(-100px, -200px);
+}
+
+.card::before, 
+.card::after {
+  content: '';
+  display: inline-block;
   position: absolute;
-  bottom: 40px;
-}
-
-.red_card {
-  background: rgb(255,183,136);
-background: linear-gradient(90deg, rgba(255,183,136,1) 0%, rgba(254,145,145,1) 36%, rgba(245,87,87,1) 100%);
-}
-
-.blue_card {
-  background: rgb(121,202,221);
-background: linear-gradient(90deg, rgba(121,202,221,1) 0%, rgba(71,174,215,1) 36%, rgba(29,116,203,1) 100%);
-}
-
-.green_card {
-  background: rgb(158,242,219);
-background: linear-gradient(90deg, rgba(158,242,219,1) 0%, rgba(80,222,195,1) 36%, rgba(53,193,157,1) 100%);
-}
-
-.article .container:nth-child(3n) {
-  background: rgb(158,242,219);
-background: linear-gradient(90deg, rgba(158,242,219,1) 0%, rgba(80,222,195,1) 36%, rgba(53,193,157,1) 100%);
-}
-
-.article .container:nth-child(3n+1) {
-  background: rgb(255,183,136);
-background: linear-gradient(90deg, rgba(255,183,136,1) 0%, rgba(254,145,145,1) 36%, rgba(245,87,87,1) 100%);
-}
-
-.article .container:nth-child(3n+2) {
-  background: rgb(121,202,221);
-background: linear-gradient(90deg, rgba(121,202,221,1) 0%, rgba(71,174,215,1) 36%, rgba(29,116,203,1) 100%);
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.322);
+  border-radius: 50%;
+  transition: transform 1s linear;
 }
